@@ -25,12 +25,14 @@ head(college_train)
 Prediction = predict(fit1, newdata = college_valid)
 Actual = college_valid$Grad.Rate
 mean(Actual - Prediction)
-RMSE = sqrt(mean(Actual - Prediction)^2)
+RMSE = sqrt(mean((Actual - Prediction)^2))
 
-fit2 = lm(Grad.Rate ~ Private + Outstate + Top25perc + perc.alumni + Apps + P.Undergrad + Room.Board + Expend + Personal , data = college_train)
+fit2 = lm(Grad.Rate ~ Private + Outstate + Top25perc + perc.alumni + Apps + P.Undergrad + Room.Board + Expend + Personal, 
+          data = college_train)
 summary(fit2)
 head(college_train)
 Prediction = predict(fit2, newdata = college_valid)
 Actual = college_valid$Grad.Rate
 mean(Actual - Prediction)
-RMSE = sqrt(mean(Actual - Prediction)^2)
+RMSE2 = sqrt(mean((Actual - Prediction)^2))
+RMSE2
